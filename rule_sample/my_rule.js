@@ -7,9 +7,7 @@ var url = require('url');
 module.exports = {
 
     *beforeSendRequest(requestDetail) {
-        // if (requestDetail.requestOptions.hostname.indexOf("api.ff-svc.cn") === -1 || requestDetail.requestOptions.hostname.indexOf("paymentsapi.farfetch.net") === -1) {
-        //     return;
-        // }
+
         const mocklist = util.getMockfileList();
         for (var i = 0; i < mocklist.length; i++) {
             var current_url = new URL(requestDetail.url);
